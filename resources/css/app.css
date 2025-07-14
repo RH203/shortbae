@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+
+/* Import Tailwind & plugin styles */
+@import "tailwindcss";
+@import "flyonui/variants.css";
+@import "flyonui/src/vendor/flatpickr.css";
+
+/* Tambahkan plugin konfigurasi */
+@plugin "@iconify/tailwind4";
+@plugin "flyonui" {
+  themes: ghibli;
+}
+
+/* Konfigurasi tema (custom properties) */
+@theme {
+  --font-sans: 'Amaranth';
+}
+
+/* Source path (tidak standar CSS, mungkin untuk plugin custom?) */
+/* Jika ini bukan directive khusus PostCSS plugin, hapus saja */
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@source '../node_modules/flyonui/flyonui.js';
