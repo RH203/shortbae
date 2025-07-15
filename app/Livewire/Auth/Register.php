@@ -4,6 +4,7 @@ namespace App\Livewire\Auth;
 
 use App\Enum\RoleEnum;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Layout;
@@ -18,6 +19,7 @@ class Register extends Component
   public $name;
   public $email;
   public $password;
+  public $password_confirmation;
 
   protected $rules = [
     'name' => 'required|string',
@@ -38,6 +40,8 @@ class Register extends Component
     $user->assignRole(RoleEnum::USER->value);
 
     Auth::login($user);
+
+    event(new Registered($user));
 
     return $this->redirect('/');
 

@@ -32,7 +32,7 @@
            class="md:navbar-end collapse hidden grow basis-full overflow-hidden transition-[height] duration-300 max-md:w-full">
         <ul class="menu md:menu-horizontal gap-2 p-0 text-base max-md:mt-2">
           @if(\Illuminate\Support\Facades\Auth::check())
-          <li><a href="#">Akun</a></li>
+          <li><a href="{{ route('profile') }}" wire:navigate>Akun</a></li>
           @endif
           <li><a href="{{ route('create.url') }}" wire:navigate>Create Url</a></li>
           <li><a href="{{ route('riwayat.url') }}" wire:navigate>Riwayat Url</a></li>

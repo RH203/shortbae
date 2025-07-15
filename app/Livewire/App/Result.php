@@ -6,7 +6,7 @@ use App\Models\ShortUrl;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Hasil URL')]
+#[Title('Result URL')]
 class Result extends Component
 {
   public $shortenedUrl;

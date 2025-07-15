@@ -16,7 +16,7 @@
 {{--        <td>{{ $data->url }}</td>--}}
         <td>{{ config('app.url') . '/' . $data->short_url }}</td>
         <td>{{ $data->visit_count ?? '0' }}</td>
-        <td>{{ $data->expired_at ?? 'null' }}</td>
+        <td>{{ $data->expired_at ?? 'Lifetime' }}</td>
         <td>
           <a class="btn btn-circle btn-text btn-sm" aria-label="Action button" href="{{ route('result', ['id' => $data->id]) }}" wire:navigate><span class="icon-[tabler--eye] size-5 border-1"></span></a>
           <button class="btn btn-circle btn-text btn-sm" aria-label="Action button" onclick="copyToClipboard('{{  config('app.url') . '/' . $data->short_url }}')"><span class="icon-[tabler--copy] size-5 border-1"></span></button>
