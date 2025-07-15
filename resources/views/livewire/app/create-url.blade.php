@@ -32,7 +32,8 @@
 
       <div>
         <label class="label" for="expired_at">Tanggal Kedaluwarsa (opsional)</label>
-        <input type="text" class="input w-full" placeholder="YYYY-MM-DD" id="flatpickr-date" />
+       <input type="text" id="flatpickr-date" wire:model.defer="expired_at" class="input w-full" placeholder="YYYY-MM-DD" />
+
         @error('expired_at')
         <span class="text-sm text-red-500 mt-1">{{ $message }}</span>
         @enderror
